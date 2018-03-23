@@ -12,7 +12,7 @@ public class Renderer extends JPanel{
 	protected void paintComponent(Graphics g) {
 		
 		super.paintComponent(g);
-		//thisnfsdflsd//
+		//thi
 		World.world.repaint(g);
 	}
 

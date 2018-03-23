@@ -44,7 +44,7 @@ public class World implements ActionListener{
 		System.out.println("SALUT");
 		g.setColor(Color.RED);
 		x=x+5;
-		
+		//ssfsdf
 		g.fillRect(x,y, 50, 50);
 		
 	}

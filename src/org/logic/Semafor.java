@@ -1,4 +1,4 @@
-package org;
+package org.logic;
 
 public class Semafor {
 	private String culoareActuala;

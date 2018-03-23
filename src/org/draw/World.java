@@ -1,5 +1,6 @@
 package org.draw;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,6 +15,8 @@ public class World implements ActionListener{
 	public final int WIDTH = 1200, HEIGHT = 800;
 	
 	public Renderer renderer;
+	
+	int x=0,y=0;
 	
 	public World() {
 		JFrame jframe = new JFrame();
@@ -39,6 +42,10 @@ public class World implements ActionListener{
 	public void repaint(Graphics g) {
 		
 		System.out.println("SALUT");
+		g.setColor(Color.RED);
+		x=x+5;
+		
+		g.fillRect(x,y, 50, 50);
 		
 	}
 

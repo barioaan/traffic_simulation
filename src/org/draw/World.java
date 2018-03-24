@@ -23,9 +23,9 @@ public class World implements ActionListener{
 	
 	Masina masina_1, masina_2;
 	
-	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N;
+	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N, bandaCI, bandaCN;
 	
-	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A;
+	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A, sep_C;
 	
 	JButton button = new JButton("Click");
 	
@@ -80,11 +80,23 @@ public class World implements ActionListener{
 		
 		
 		
-		
-		
-		
 		Coordonate cordSep_SN_SI_A = new Coordonate(0,498);
-		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,WIDTH,4);
+		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,HEIGHT,4);
+		
+		
+		
+		
+		
+		Coordonate cordBandaCI = new Coordonate(558,0);
+		bandaCI = new Banda(cordBandaCI,40,HEIGHT);
+		
+		Coordonate cordSep_C = new Coordonate(0,598);
+		sep_C = new Banda(cordSep_C,4,HEIGHT);
+		
+		Coordonate cordBandaCN = new Coordonate(602,0);
+		bandaCN = new Banda(cordBandaCN,40,HEIGHT);
+		
+		
 		
 	}
 
@@ -123,6 +135,30 @@ public class World implements ActionListener{
 		//Separator sensuri benzi A
 		g.setColor(Color.WHITE);
 		g.fillRect(sep_SN_SI_A.pozitieInceput.x, sep_SN_SI_A.pozitieInceput.y, sep_SN_SI_A.lungime, sep_SN_SI_A.latime);
+		
+		
+		
+		//BANDA C sens invers
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaCI.pozitieInceput.x, bandaCI.pozitieInceput.y, bandaCI.lungime, bandaCI.latime);
+		
+		//BANDA C separator
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_C.pozitieInceput.x, sep_C.pozitieInceput.y, sep_C.lungime, sep_C.latime);
+		
+		//BANDA C sens normal
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaCN.pozitieInceput.x, bandaCN.pozitieInceput.y, bandaCN.lungime, bandaCN.latime);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

@@ -25,7 +25,7 @@ public class World implements ActionListener{
 	
 	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N;
 	
-	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN;
+	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A;
 	
 	JButton button = new JButton("Click");
 	
@@ -57,24 +57,38 @@ public class World implements ActionListener{
 		
 		// SI - sens invers  sN- pentru normal
 		
-		Coordonate cordBandaA1I = new Coordonate(0,412);
+		Coordonate cordBandaA1I = new Coordonate(0,416);
 		bandaA1I = new Banda(cordBandaA1I,1200,40);
 		
-		Coordonate cordBandaA2I = new Coordonate(0,452);
+		Coordonate cordSep_A1I_A2I_SI = new Coordonate(0,456);
+		sep_A1I_A2I_SI = new Banda(cordSep_A1I_A2I_SI,1200,2);
+		
+		Coordonate cordBandaA2I = new Coordonate(0,458);
 		bandaA2I = new Banda(cordBandaA2I,1200,40);
 		
-		Coordonate cordSep_A1I_A2I_SI = new Coordonate(0,432);
-		sep_A1I_A2I_SI = new Banda(cordBandaA1I,1200,2);
 		
 		
-		Coordonate cordBandaA1N = new Coordonate(0,452);
-		bandaA1I = new Banda(cordBandaA1N,1200,40);
 		
-		Coordonate cordBandaA2N = new Coordonate(0,492);
-		bandaA2I = new Banda(cordBandaA2N,1200,40);
 		
-		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,472);
-		sep_A1N_A2N_SN = new Banda(cordBandaA1N,1200,2);
+		
+		Coordonate cordBandaA1N = new Coordonate(0,502);
+		bandaA1N = new Banda(cordBandaA1N,1200,40);
+		
+		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,542);
+		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,1200,2);
+		
+		Coordonate cordBandaA2N = new Coordonate(0,544);
+		bandaA2N = new Banda(cordBandaA2N,1200,40);
+		
+		
+		
+		
+		
+		
+		
+		
+		Coordonate cordSep_SN_SI_A = new Coordonate(0,498);
+		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,1200,4);
 		
 	}
 
@@ -88,20 +102,36 @@ public class World implements ActionListener{
 	public void repaint(Graphics g) {
 		
 		desenareWorld();
-		
+		//Banda A1 sens invers
 		g.setColor(Color.GRAY);
 		g.fillRect(bandaA1I.pozitieInceput.x, bandaA1I.pozitieInceput.y, bandaA1I.lungime, bandaA1I.latime);
-		
+		//Banda A2 sens invers
 		g.setColor(Color.GRAY);
 		g.fillRect(bandaA2I.pozitieInceput.x, bandaA2I.pozitieInceput.y, bandaA2I.lungime, bandaA2I.latime);
-		
-		
-		
-		
-		//g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x,sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
-		
+		//Separator benzi A sens invers
 		g.setColor(Color.WHITE);
-		g.drawLine(0, 432, 1200, 432);
+		g.fillRect(sep_A1I_A2I_SI.pozitieInceput.x,sep_A1I_A2I_SI.pozitieInceput.y, sep_A1I_A2I_SI.lungime, sep_A1I_A2I_SI.latime);
+		
+		
+		//Banda A2 sens normal
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaA2N.pozitieInceput.x, bandaA2N.pozitieInceput.y, bandaA2N.lungime, bandaA2N.latime);
+		//Banda A1 sens normal
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaA1N.pozitieInceput.x, bandaA1N.pozitieInceput.y, bandaA1N.lungime, bandaA1N.latime);
+		//Separator benzi A sens normal
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x, sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
+		
+		
+		//Separator sensuri benzi A
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_SN_SI_A.pozitieInceput.x, sep_SN_SI_A.pozitieInceput.y, sep_SN_SI_A.lungime, sep_SN_SI_A.latime);
+		
+		
+		
+		//g.setColor(Color.WHITE);
+		//g.drawLine(0, 432, 1200, 432);
 		//g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x,sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
 		
 		

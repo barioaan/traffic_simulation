@@ -25,7 +25,7 @@ public class World implements ActionListener{
 	
 	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N, bandaCI, bandaCN, bandaB, bandaDN, bandaDI;
 	
-	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A, sep_C, sep_D;
+	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A, sep_C, sep_D, sep_A1I_A2I_SI_2, sep_A1I_A2I_SI_3;
 	
 	JButton button = new JButton("Click");
 	
@@ -39,6 +39,7 @@ public class World implements ActionListener{
 		jframe.setSize(WIDTH,HEIGHT);
 		jframe.setVisible(true);
 		//jframe.setResizable(false);
+		jframe.setBackground(new Color(0,0,0));
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		timer.start();
@@ -53,11 +54,17 @@ public class World implements ActionListener{
 		
 		// SI - sens invers  sN- pentru normal
 		
-		Coordonate cordBandaA1I = new Coordonate(0,416);
+		Coordonate cordBandaA1I = new Coordonate(0,418);
 		bandaA1I = new Banda(cordBandaA1I,WIDTH,40);
 		
 		Coordonate cordSep_A1I_A2I_SI = new Coordonate(0,456);
-		sep_A1I_A2I_SI = new Banda(cordSep_A1I_A2I_SI,WIDTH,2);
+		sep_A1I_A2I_SI = new Banda(cordSep_A1I_A2I_SI,558,2);
+		
+		Coordonate cordSep_A1I_A2I_SI_2 = new Coordonate(638,456);
+		sep_A1I_A2I_SI_2 = new Banda(cordSep_A1I_A2I_SI_2,646,2);
+		
+		Coordonate cordSep_A1I_A2I_SI_3 = new Coordonate(1326,456);
+		sep_A1I_A2I_SI_3 = new Banda(cordSep_A1I_A2I_SI_3,474,2);
 		
 		Coordonate cordBandaA2I = new Coordonate(0,458);
 		bandaA2I = new Banda(cordBandaA2I,WIDTH,40);
@@ -67,13 +74,13 @@ public class World implements ActionListener{
 		
 		
 		
-		Coordonate cordBandaA1N = new Coordonate(0,502);
+		Coordonate cordBandaA1N = new Coordonate(0,498);
 		bandaA1N = new Banda(cordBandaA1N,WIDTH,40);
 		
-		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,542);
+		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,538);
 		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,WIDTH,2);
 		
-		Coordonate cordBandaA2N = new Coordonate(0,544);
+		Coordonate cordBandaA2N = new Coordonate(0,538);
 		bandaA2N = new Banda(cordBandaA2N,WIDTH,40);
 		
 		
@@ -102,7 +109,7 @@ public class World implements ActionListener{
 		
 		
 		Coordonate cordBandaB = new Coordonate(1286,0);
-		bandaB = new Banda(cordBandaB,40,416);
+		bandaB = new Banda(cordBandaB,40,418);
 		
 		
 		
@@ -110,13 +117,13 @@ public class World implements ActionListener{
 		
 		
 		
-		Coordonate cordBandaDI = new Coordonate(1242,584);
+		Coordonate cordBandaDI = new Coordonate(1246,578);
 		bandaDI = new Banda(cordBandaDI,40,416);
 
-		Coordonate cordSep_D = new Coordonate(1282,584);
+		Coordonate cordSep_D = new Coordonate(1284,578);
 		sep_D = new Banda(cordSep_D,4,416);
 		
-		Coordonate cordBandaDN = new Coordonate(1286,584);
+		Coordonate cordBandaDN = new Coordonate(1286,578);
 		bandaDN = new Banda(cordBandaDN,40,416);
 		
 		
@@ -144,7 +151,12 @@ public class World implements ActionListener{
 		//Separator benzi A sens invers
 		g.setColor(Color.WHITE);
 		g.fillRect(sep_A1I_A2I_SI.pozitieInceput.x,sep_A1I_A2I_SI.pozitieInceput.y, sep_A1I_A2I_SI.lungime, sep_A1I_A2I_SI.latime);
-		
+		//Banda A2 sens invers - 2
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_A1I_A2I_SI_2.pozitieInceput.x, sep_A1I_A2I_SI_2.pozitieInceput.y, sep_A1I_A2I_SI_2.lungime, sep_A1I_A2I_SI_2.latime);
+		//Banda A2 sens invers - 3
+				g.setColor(Color.WHITE);
+				g.fillRect(sep_A1I_A2I_SI_3.pozitieInceput.x, sep_A1I_A2I_SI_3.pozitieInceput.y, sep_A1I_A2I_SI_3.lungime, sep_A1I_A2I_SI_3.latime);
 		
 		//Banda A2 sens normal
 		g.setColor(Color.GRAY);
@@ -176,19 +188,20 @@ public class World implements ActionListener{
 		
 		
 		//BANDA B sens unic
-		g.setColor(Color.GRAY);
+		g.setColor(Color.RED);
 		g.fillRect(bandaB.pozitieInceput.x, bandaB.pozitieInceput.y, bandaB.lungime, bandaB.latime);
 		
 		
 		
 		//BANDA D sens invers
-		g.setColor(Color.GRAY);
+		g.setColor(Color.BLUE);
 		g.fillRect(bandaDI.pozitieInceput.x, bandaDI.pozitieInceput.y, bandaDI.lungime, bandaDI.latime);
 		//BANDA D sens normal
-		g.setColor(Color.GRAY);
+		g.setColor(Color.BLACK);
 		g.fillRect(bandaDN.pozitieInceput.x, bandaDN.pozitieInceput.y, bandaDN.lungime, bandaDN.latime);
 		//BANDA D separator
-		
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_D.pozitieInceput.x, sep_D.pozitieInceput.y, sep_D.lungime, sep_D.latime);
 		
 		
 		

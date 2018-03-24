@@ -17,7 +17,7 @@ public class World implements ActionListener{
 
 	public static World world;
 	
-	public final int WIDTH = 1200, HEIGHT = 1000;
+	public final int WIDTH = 1800, HEIGHT = 1000;
 	
 	public Renderer renderer;
 	
@@ -42,11 +42,7 @@ public class World implements ActionListener{
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		timer.start();
-		
-		
-	//	masina_1 = new Masina(0,350);
-		//masina_2 = new Masina(0,350);
-		
+				
 	}
 	
 	
@@ -58,13 +54,13 @@ public class World implements ActionListener{
 		// SI - sens invers  sN- pentru normal
 		
 		Coordonate cordBandaA1I = new Coordonate(0,416);
-		bandaA1I = new Banda(cordBandaA1I,1200,40);
+		bandaA1I = new Banda(cordBandaA1I,WIDTH,40);
 		
 		Coordonate cordSep_A1I_A2I_SI = new Coordonate(0,456);
-		sep_A1I_A2I_SI = new Banda(cordSep_A1I_A2I_SI,1200,2);
+		sep_A1I_A2I_SI = new Banda(cordSep_A1I_A2I_SI,WIDTH,2);
 		
 		Coordonate cordBandaA2I = new Coordonate(0,458);
-		bandaA2I = new Banda(cordBandaA2I,1200,40);
+		bandaA2I = new Banda(cordBandaA2I,WIDTH,40);
 		
 		
 		
@@ -72,13 +68,13 @@ public class World implements ActionListener{
 		
 		
 		Coordonate cordBandaA1N = new Coordonate(0,502);
-		bandaA1N = new Banda(cordBandaA1N,1200,40);
+		bandaA1N = new Banda(cordBandaA1N,WIDTH,40);
 		
 		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,542);
-		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,1200,2);
+		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,WIDTH,2);
 		
 		Coordonate cordBandaA2N = new Coordonate(0,544);
-		bandaA2N = new Banda(cordBandaA2N,1200,40);
+		bandaA2N = new Banda(cordBandaA2N,WIDTH,40);
 		
 		
 		
@@ -88,7 +84,7 @@ public class World implements ActionListener{
 		
 		
 		Coordonate cordSep_SN_SI_A = new Coordonate(0,498);
-		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,1200,4);
+		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,WIDTH,4);
 		
 	}
 

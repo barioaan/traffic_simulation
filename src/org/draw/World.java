@@ -10,17 +10,22 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 
 import org.logic.Banda;
+import org.logic.Coordonate;
 import org.logic.Masina;
 
 public class World implements ActionListener{
 
 	public static World world;
 	
-	public final int WIDTH = 1200, HEIGHT = 800;
+	public final int WIDTH = 1200, HEIGHT = 1000;
 	
 	public Renderer renderer;
 	
 	Masina masina_1, masina_2;
+	
+	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N;
+	
+	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN;
 	
 	JButton button = new JButton("Click");
 	
@@ -39,11 +44,41 @@ public class World implements ActionListener{
 		timer.start();
 		
 		
-		masina_1 = new Masina(0,350);
-		masina_2 = new Masina(0,350);
+	//	masina_1 = new Masina(0,350);
+		//masina_2 = new Masina(0,350);
 		
 	}
 	
+	
+	public void desenareWorld() {
+		desenareBenzi();
+	}
+	private void desenareBenzi() {
+		
+		// SI - sens invers  sN- pentru normal
+		
+		Coordonate cordBandaA1I = new Coordonate(0,412);
+		bandaA1I = new Banda(cordBandaA1I,1200,40);
+		
+		Coordonate cordBandaA2I = new Coordonate(0,452);
+		bandaA2I = new Banda(cordBandaA2I,1200,40);
+		
+		Coordonate cordSep_A1I_A2I_SI = new Coordonate(0,432);
+		sep_A1I_A2I_SI = new Banda(cordBandaA1I,1200,2);
+		
+		
+		Coordonate cordBandaA1N = new Coordonate(0,452);
+		bandaA1I = new Banda(cordBandaA1N,1200,40);
+		
+		Coordonate cordBandaA2N = new Coordonate(0,492);
+		bandaA2I = new Banda(cordBandaA2N,1200,40);
+		
+		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,472);
+		sep_A1N_A2N_SN = new Banda(cordBandaA1N,1200,2);
+		
+	}
+
+
 	public void actionPerformed(ActionEvent e) {
 		
 		renderer.repaint();
@@ -52,13 +87,26 @@ public class World implements ActionListener{
 	
 	public void repaint(Graphics g) {
 		
-		Banda banda_1 = new Banda(0,300,1200,100);
-		Banda banda_2 = new Banda(550,0,100,1200);
+		desenareWorld();
 		
 		g.setColor(Color.GRAY);
-		g.fillRect(banda_1.Xstart,banda_1.Ystart, banda_1.Xfinish, banda_1.Yfinish);
+		g.fillRect(bandaA1I.pozitieInceput.x, bandaA1I.pozitieInceput.y, bandaA1I.lungime, bandaA1I.latime);
 		
 		g.setColor(Color.GRAY);
+		g.fillRect(bandaA2I.pozitieInceput.x, bandaA2I.pozitieInceput.y, bandaA2I.lungime, bandaA2I.latime);
+		
+		
+		
+		
+		//g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x,sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
+		
+		g.setColor(Color.WHITE);
+		g.drawLine(0, 432, 1200, 432);
+		//g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x,sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
+		
+		
+		
+		/*g.setColor(Color.GRAY);
 		g.fillRect(banda_2.Xstart,banda_2.Ystart, banda_2.Xfinish, banda_2.Yfinish);
 		
 		Banda separator_banda = new Banda(0,350,550,3);
@@ -113,7 +161,7 @@ public class World implements ActionListener{
 		}
 		g.fillRect(masina_2.x,masina_2.y, 50, 50);
 		
-		
+		*/
 	}
 
 	

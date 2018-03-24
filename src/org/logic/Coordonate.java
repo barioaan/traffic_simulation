@@ -2,34 +2,31 @@ package org.logic;
 
 public class Coordonate {
 	
-	public double x,y;
+	public int x,y;
 
-	public Coordonate(double x, double y) {
+	public Coordonate(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;
 	}
 	
-	public double getX() {
+	public int getX() {
 		return this.x;
 	}
 	
-	public void setX(double x) {
+	public void setX(int x) {
 		this.x=x;
 		
 	}
 	
-	public double getY() {
+	public int getY() {
 		return this.y;
 	}
 	
-	public void setY(double y) {
+	public void setY(int y) {
 		this.y=y;
 		
 	}
 	
-	public void crearePunct(double xx, double yy){
-		this.x=xx;
-		this.y=yy;
-	}
+	
 }

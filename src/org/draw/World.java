@@ -119,18 +119,10 @@ public class World implements ActionListener{
 		
 		
 		
-		
-		
-		
-		
-		
-		
 		//Banda B
 		Coordonate cordBandaB = new Coordonate(1286,0);
 		bandaB = new Banda(cordBandaB,40,418);
-		
-		
-		
+				
 		
 		
 		
@@ -158,7 +150,7 @@ public class World implements ActionListener{
 		Coordonate cordBandaEN = new Coordonate(598,578);
 		bandaEN = new Banda(cordBandaEN,40,416);
 		
-		
+
 		
 		
 	}
@@ -256,14 +248,14 @@ public class World implements ActionListener{
 		
 		
 		//BANDA E sens invers
-				g.setColor(Color.GRAY);
-				g.fillRect(bandaEI.pozitieInceput.x, bandaEI.pozitieInceput.y, bandaEI.lungime, bandaEI.latime);
-				//BANDA D sens normal
-				g.setColor(Color.GRAY);
-				g.fillRect(bandaEN.pozitieInceput.x, bandaEN.pozitieInceput.y, bandaEN.lungime, bandaEN.latime);
-				//BANDA D separator
-				g.setColor(Color.WHITE);
-				g.fillRect(sep_E.pozitieInceput.x, sep_E.pozitieInceput.y, sep_E.lungime, sep_E.latime);
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaEI.pozitieInceput.x, bandaEI.pozitieInceput.y, bandaEI.lungime, bandaEI.latime);
+		//BANDA D sens normal
+		g.setColor(Color.GRAY);
+		g.fillRect(bandaEN.pozitieInceput.x, bandaEN.pozitieInceput.y, bandaEN.lungime, bandaEN.latime);
+		//BANDA D separator
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_E.pozitieInceput.x, sep_E.pozitieInceput.y, sep_E.lungime, sep_E.latime);
 		
 		
 		

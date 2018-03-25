@@ -155,6 +155,9 @@ public class World implements ActionListener{
 		
 	}
 
+	public void desenareMasini() {
+		
+	}
 
 	public void actionPerformed(ActionEvent e) {
 		

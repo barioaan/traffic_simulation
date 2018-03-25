@@ -111,11 +111,13 @@ public class World implements ActionListener{
 		Coordonate cordBandaCI = new Coordonate(558,0);
 		bandaCI = new Banda(cordBandaCI,40,418);
 		
+		Coordonate cordSep_C = new Coordonate(596,0);
+		sep_C = new Banda(cordSep_C,4,418);
+		
 		Coordonate cordBandaCN = new Coordonate(598,0);
 		bandaCN = new Banda(cordBandaCN,40,418);
 		
-		Coordonate cordSep_C = new Coordonate(596,0);
-		sep_C = new Banda(cordSep_C,4,400);
+		
 		
 		
 		
@@ -228,13 +230,12 @@ public class World implements ActionListener{
 		//BANDA C sens invers
 		g.setColor(Color.GRAY);
 		g.fillRect(bandaCI.pozitieInceput.x, bandaCI.pozitieInceput.y, bandaCI.lungime, bandaCI.latime);
-		//BANDA C separator
-		g.setColor(Color.WHITE);
-		g.fillRect(sep_C.pozitieInceput.x, sep_C.pozitieInceput.y, sep_C.lungime, sep_C.latime);
 		//BANDA C sens normal
 		g.setColor(Color.GRAY);
 		g.fillRect(bandaCN.pozitieInceput.x, bandaCN.pozitieInceput.y, bandaCN.lungime, bandaCN.latime);
-		
+		//BANDA C separator
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_C.pozitieInceput.x, sep_C.pozitieInceput.y, sep_C.lungime, sep_C.latime);
 		
 		
 		//BANDA B sens unic

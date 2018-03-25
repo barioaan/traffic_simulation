@@ -25,7 +25,7 @@ public class World implements ActionListener{
 	
 	Banda bandaA1I, bandaA2I, bandaA1N, bandaA2N, bandaCI, bandaCN, bandaB, bandaDN, bandaDI;
 	
-	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A, sep_C, sep_D, sep_A1I_A2I_SI_2, sep_A1I_A2I_SI_3;
+	Banda sep_A1I_A2I_SI, sep_A1N_A2N_SN, sep_SN_SI_A, sep_C, sep_D, sep_A1I_A2I_SI_2, sep_A1I_A2I_SI_3, sep_A1N_A2N_SN_2, sep_A1N_A2N_SN_3, sep_SN_SI_A_2, sep_SN_SI_A_3;
 	
 	JButton button = new JButton("Click");
 	
@@ -54,6 +54,8 @@ public class World implements ActionListener{
 		
 		// SI - sens invers  sN- pentru normal
 		
+		
+		//BENZI A CU SEPARATORI SENS INVERS
 		Coordonate cordBandaA1I = new Coordonate(0,418);
 		bandaA1I = new Banda(cordBandaA1I,WIDTH,40);
 		
@@ -73,12 +75,18 @@ public class World implements ActionListener{
 		
 		
 		
-		
+		//BENZI A CU SEPARATORI SENS NORMAL
 		Coordonate cordBandaA1N = new Coordonate(0,498);
 		bandaA1N = new Banda(cordBandaA1N,WIDTH,40);
 		
 		Coordonate cordSep_A1N_A2N_SN = new Coordonate(0,538);
-		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,WIDTH,2);
+		sep_A1N_A2N_SN = new Banda(cordSep_A1N_A2N_SN,558,2);
+		
+		Coordonate cordSep_A1N_A2N_SN_2 = new Coordonate(638,538);
+		sep_A1N_A2N_SN_2 = new Banda(cordSep_A1N_A2N_SN_2,646,2);
+		
+		Coordonate cordSep_A1N_A2N_SN_3 = new Coordonate(1326,538);
+		sep_A1N_A2N_SN_3 = new Banda(cordSep_A1N_A2N_SN_3,474,2);
 		
 		Coordonate cordBandaA2N = new Coordonate(0,538);
 		bandaA2N = new Banda(cordBandaA2N,WIDTH,40);
@@ -86,28 +94,34 @@ public class World implements ActionListener{
 		
 		
 		
-		
+		//SEPARATOR SENSURI BANDA A
 		Coordonate cordSep_SN_SI_A = new Coordonate(0,498);
-		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,584,4);
+		sep_SN_SI_A = new Banda(cordSep_SN_SI_A,558,4);
+		
+		Coordonate cordSep_SN_SI_A_2 = new Coordonate(638,498);
+		sep_SN_SI_A_2 = new Banda(cordSep_SN_SI_A_2,646,4);
+		
+		Coordonate cordSep_SN_SI_A_3 = new Coordonate(1326,498);
+		sep_SN_SI_A_3 = new Banda(cordSep_SN_SI_A_3,474,4);
 		
 		
 		
 		
-		
+		//BANDA C CU SEPARATORI de sensuri
 		Coordonate cordBandaCI = new Coordonate(558,0);
 		bandaCI = new Banda(cordBandaCI,40,HEIGHT);
 		
-		Coordonate cordSep_C = new Coordonate(0,598);
-		sep_C = new Banda(cordSep_C,4,HEIGHT);
+		Coordonate cordSep_C = new Coordonate(596,0);
+		sep_C = new Banda(cordSep_C,8,418);
 		
-		Coordonate cordBandaCN = new Coordonate(602,0);
+		Coordonate cordBandaCN = new Coordonate(598,0);
 		bandaCN = new Banda(cordBandaCN,40,HEIGHT);
 		
 		
 		
 		
 		
-		
+		//Banda B
 		Coordonate cordBandaB = new Coordonate(1286,0);
 		bandaB = new Banda(cordBandaB,40,418);
 		
@@ -116,7 +130,7 @@ public class World implements ActionListener{
 		
 		
 		
-		
+		// BANDA D cu separator sensuri
 		Coordonate cordBandaDI = new Coordonate(1246,578);
 		bandaDI = new Banda(cordBandaDI,40,416);
 
@@ -142,6 +156,8 @@ public class World implements ActionListener{
 	public void repaint(Graphics g) {
 		
 		desenareWorld();
+		
+		
 		//Banda A1 sens invers
 		g.setColor(Color.GRAY);
 		g.fillRect(bandaA1I.pozitieInceput.x, bandaA1I.pozitieInceput.y, bandaA1I.lungime, bandaA1I.latime);
@@ -155,8 +171,12 @@ public class World implements ActionListener{
 		g.setColor(Color.WHITE);
 		g.fillRect(sep_A1I_A2I_SI_2.pozitieInceput.x, sep_A1I_A2I_SI_2.pozitieInceput.y, sep_A1I_A2I_SI_2.lungime, sep_A1I_A2I_SI_2.latime);
 		//Banda A2 sens invers - 3
-				g.setColor(Color.WHITE);
-				g.fillRect(sep_A1I_A2I_SI_3.pozitieInceput.x, sep_A1I_A2I_SI_3.pozitieInceput.y, sep_A1I_A2I_SI_3.lungime, sep_A1I_A2I_SI_3.latime);
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_A1I_A2I_SI_3.pozitieInceput.x, sep_A1I_A2I_SI_3.pozitieInceput.y, sep_A1I_A2I_SI_3.lungime, sep_A1I_A2I_SI_3.latime);
+		
+		
+		
+		
 		
 		//Banda A2 sens normal
 		g.setColor(Color.GRAY);
@@ -167,11 +187,26 @@ public class World implements ActionListener{
 		//Separator benzi A sens normal
 		g.setColor(Color.WHITE);
 		g.fillRect(sep_A1N_A2N_SN.pozitieInceput.x, sep_A1N_A2N_SN.pozitieInceput.y, sep_A1N_A2N_SN.lungime, sep_A1N_A2N_SN.latime);
+		//Separator benzi A sens normal -2
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_A1N_A2N_SN_2.pozitieInceput.x, sep_A1N_A2N_SN_2.pozitieInceput.y, sep_A1N_A2N_SN_2.lungime, sep_A1N_A2N_SN_2.latime);
+		//Separator benzi A sens normal -3 
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_A1N_A2N_SN_3.pozitieInceput.x, sep_A1N_A2N_SN_3.pozitieInceput.y, sep_A1N_A2N_SN_3.lungime, sep_A1N_A2N_SN_3.latime);
 		
 		
 		//Separator sensuri benzi A
 		g.setColor(Color.WHITE);
 		g.fillRect(sep_SN_SI_A.pozitieInceput.x, sep_SN_SI_A.pozitieInceput.y, sep_SN_SI_A.lungime, sep_SN_SI_A.latime);
+		//Separator sensuri benzi A -2
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_SN_SI_A_2.pozitieInceput.x, sep_SN_SI_A_2.pozitieInceput.y, sep_SN_SI_A_2.lungime, sep_SN_SI_A_2.latime);
+		//Separator sensuri benzi A -3
+		g.setColor(Color.WHITE);
+		g.fillRect(sep_SN_SI_A_3.pozitieInceput.x, sep_SN_SI_A_3.pozitieInceput.y, sep_SN_SI_A_3.lungime, sep_SN_SI_A_3.latime);
+		
+		
+		
 		
 		
 		

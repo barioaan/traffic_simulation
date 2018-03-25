@@ -2,11 +2,17 @@ package org.draw;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
+import javax.imageio.ImageIO;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.Timer;
 
 import org.logic.Banda;
@@ -331,6 +337,14 @@ public class World implements ActionListener{
 		g.fillRect(masina_2.x,masina_2.y, 50, 50);
 		
 		*/
+				
+		/*		
+				URL image = getClass().getResource("C:\\Users\\Adela\\Desktop\\imagine");
+				Icon sens_unic = new ImageIcon (image);
+				int w= sens_unic.getIconHeight();
+				int h =sens_unic.getIconHeight();
+				g.drawImage((Image) sens_unic, 400, 400, w, h, null);
+	*/	
 	}
 
 	

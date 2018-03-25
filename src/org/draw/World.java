@@ -337,7 +337,7 @@ public class World implements ActionListener{
 				URL image = getClass().getResource("C:\\Users\\Adela\\Desktop\\imagine");
 				Icon sens_unic = new ImageIcon (image);
 				int w= sens_unic.getIconHeight();
-				int h =sens_unic.getIconHeight();
+				int h =sens_unic.getIconHeight(); 
 				g.drawImage((Image) sens_unic, 400, 400, w, h, null);
 	*/	
 	}

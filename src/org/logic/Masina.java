@@ -6,11 +6,15 @@ import java.util.Random;
 public class Masina {
 	public Banda banda;
 	public int culoare;
+	public int lungime;
+	public int latime;
 
-	public Masina(Banda banda, int culoare) {
+	public Masina(Banda banda, int lungime, int latime) {
 		super();
-		this.banda=banda;
-		this.culoare=culoare;
+		this.banda = banda;
+		//this.culoare = culoare;
+		this.lungime = lungime;
+		this.latime = latime;
 	}
 	
 /*	Random randomGenerator = new Random();

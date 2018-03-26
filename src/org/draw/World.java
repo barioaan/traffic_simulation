@@ -2,17 +2,12 @@ package org.draw;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+import java.util.Random;
 
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.Timer;
 
 import org.logic.Banda;
@@ -35,6 +30,10 @@ public class World implements ActionListener{
 	
 	JButton button = new JButton("Click");
 	
+	Random random = new Random();
+	
+	Masina m1;
+	
 	public World() {
 		JFrame jframe = new JFrame();
 		Timer timer = new Timer(100, this);
@@ -55,6 +54,8 @@ public class World implements ActionListener{
 	
 	public void desenareWorld() {
 		desenareBenzi();
+		
+		desenareMasini();
 	}
 	private void desenareBenzi() {
 		
@@ -163,14 +164,17 @@ public class World implements ActionListener{
 
 	public void desenareMasini() {
 		
+		m1 = new Masina(bandaA1N,20,20);
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
 		
 		renderer.repaint();
 	}
-	
-	
+	int xx=0;
+	int yy=542;
+	int rezultat;
 	public void repaint(Graphics g) {
 		
 		desenareWorld();
@@ -268,7 +272,29 @@ public class World implements ActionListener{
 		
 		
 		
+		g.setColor(Color.RED);
 		
+		
+		if(xx <= 500) {
+			xx = xx + 10;
+		}else {
+			if(xx == 510) {
+				
+				xx = 568;
+				
+				 rezultat = random.nextInt(2);
+				
+				
+			}
+			if(rezultat == 1) {
+				xx = xx + 10;
+			}
+			if(rezultat == 0) {
+				yy = yy + 10;
+				//xx= 520;
+			}
+		}
+		g.fillRect(xx, yy, m1.lungime, m1.latime);
 		
 		//g.setColor(Color.WHITE);
 		//g.drawLine(0, 432, 1200, 432);

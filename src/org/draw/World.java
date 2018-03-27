@@ -164,11 +164,11 @@ public class World implements ActionListener{
 		
 		intersectia1.listaBenzi.add(bandaB);
 		
-		intersectia1.listaBenzi.add(bandaDI);
-		intersectia1.listaBenzi.add(bandaDN);
-		
 		intersectia1.listaBenzi.add(bandaCI);
 		intersectia1.listaBenzi.add(bandaCN);
+		
+		intersectia1.listaBenzi.add(bandaDI);
+		intersectia1.listaBenzi.add(bandaDN);
 		
 		intersectia1.listaBenzi.add(bandaEI);
 		intersectia1.listaBenzi.add(bandaEN);

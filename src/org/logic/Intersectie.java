@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Intersectie {
 	
-	ArrayList<Banda> listaBenzi = new ArrayList<Banda>();
+	public ArrayList<Banda> listaBenzi = new ArrayList<Banda>();
+	public ArrayList<Banda> listaSeparator = new ArrayList<Banda>();
 	
 	
 	

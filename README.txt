@@ -8,15 +8,18 @@ Clasele:
 #Space
 
 - Albu Adela -
+Clasele:
 #Semaphore
 #Entity
 #World
 
 - Branescu Serban -
+Clasele:
 #Car
 #Port
 #Pedestrian
 
 - Bradea Octavia - 
+Clasele:
 #Road
 #Connection

@@ -1,3 +1,5 @@
 g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY+48, Road1.size, 2);
 
 la cele verticale schimbi numeleRoad.size cu 2 si 2 cu numeleRoad.size. iar +48 il treci la X.
+
+si vezi ca trebuie de exemplu la Road2 faci numai la ala, la Road3 nu trebuie ca atunci vine linia dupa benzi si nu vrem asta.

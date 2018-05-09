@@ -1,5 +1,8 @@
-g.fillRect(Road1.inputPort.cordX, Road1.inputPort.cordY+48, Road1.size, 2);
+Ma gandesc la ceva de genul acuma:
 
-la cele verticale schimbi numeleRoad.size cu 2 si 2 cu numeleRoad.size. iar +48 il treci la X.
+Se primeste un numar de maisini de exemplu 15;
 
-si vezi ca trebuie de exemplu la Road2 faci numai la ala, la Road3 nu trebuie ca atunci vine linia dupa benzi si nu vrem asta.
+Se face un for de la 0 la 14 si ca pentru fiecare sa se stabileasca random culoarea si banda pe care se adauga.
+
+Apoi tot intr-un for se modifica pozitia fiecarei masini in acelasi timp (adica masinile se plimba pe benzi).
+
